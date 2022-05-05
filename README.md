@@ -25,5 +25,9 @@ and `output-tweetData.rep` gets made. rename this and paste it in the folder. Do
 ## Author
 Riek-lt for BSG Marathon!
 
+## Thanks to;
+Nicnacnic for making the autotweetr!
+[https://github.com/nicnacnic/speedcontrol-tweetr](https://github.com/nicnacnic/speedcontrol-tweetr)
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
