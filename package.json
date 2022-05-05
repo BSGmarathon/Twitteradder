@@ -1,0 +1,31 @@
+{
+  "name": "twitteradder",
+  "version": "1.0.0",
+  "description": "Mixes speedcontrol-autotweetr from nicnacnic with BSG's tweet file",
+  "main": "Twitteradder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BSGmarathon/Twitteradder.git"
+  },
+  "keywords": [
+    "nodecg",
+    "speedcontrol",
+    "twitter",
+    "bsg"
+  ],
+  "author": "riek-lt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BSGmarathon/Twitteradder/issues"
+  },
+  "homepage": "https://github.com/BSGmarathon/Twitteradder#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "csv": "^6.0.5",
+    "csv-parser": "^3.0.0",
+    "fs": "^0.0.1-security"
+  }
+}
