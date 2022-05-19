@@ -1,5 +1,5 @@
 //This files adds stuff from csv.csv into tweetData.json in the folder socialshit
-var fs = require('fs');
+const fs = require('fs');
 const colors = require('colors/safe');
 const csv = require('csv-parser');
 var csvFilePath = './socialshit/csv.csv';
