@@ -8,6 +8,9 @@ var jsonOutputPath = './socialshit/output-tweetData.rep';
 var isGameMatch = 0;
 var csvDB = []; //Will have gameNames on x+0, media on x+1 and twitter message on x+2
 var dbCounter = 0;
+var failedGames = [];
+var failedCheck = false;
+var failedOutput = 'These are the games that need manual labor: \n\n';
 
 var bigJson; //Entire JSON object
 
@@ -19,6 +22,9 @@ setTimeout(function() {
 
   checkGames();
   returnJSON();
+  if (failedCheck) {
+    writeFailedGames();
+  }
 }, 400);
 
 function checkGames() { //This function writes the correct tweet text to the correct run
@@ -35,7 +41,11 @@ function checkGames() { //This function writes the correct tweet text to the cor
       } catch (e) {}
     }
     if (!isGameMatch) {
+      if (!failedCheck) {
+        failedCheck = true;
+      }
       console.log("Didn't do shit for " + Object.values(bigJson)[i].game);
+      failedGames.push(Object.values(bigJson)[i].game + '\n');
     }
   }
 }
@@ -78,4 +88,14 @@ function returnJSON() {
     if (err) throw err;
   });
   console.log('File exported to ' + jsonOutputPath);
+}
+
+function writeFailedGames() {
+  for (var i = 0; i < failedGames.length; i++) {
+    failedOutput += failedGames[i];
+  }
+  fs.writeFile(`./socialshit/failed.txt`, failedOutput, (err) => {
+    if (err) throw err;
+    console.log('Successfully written failed games to failed.txt');
+  });
 }
